@@ -42,7 +42,8 @@
 		<MkLoading v-if="fetching"/>
 	</div>
 	<div class="dropzone" v-if="draghover"></div>
-	<input ref="fileInput" type="file" accept="*/*" multiple="multiple" tabindex="-1" @change="onChangeFileInput"/>
+	<input ref="fileInput" type="file"  multiple="multiple" tabindex="-1" @change="onChangeFileInput"/>
+	<!-- accept="image/*" -->
 </div>
 </template>
 
@@ -375,6 +376,7 @@ export default defineComponent({
 		},
 
 		onChangeFileInput() {
+			console.log('onChangeFileInput')
 			for (const file of Array.from((this.$refs.fileInput as any).files)) {
 				this.upload(file, this.folder);
 			}

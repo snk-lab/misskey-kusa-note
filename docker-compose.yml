@@ -7,9 +7,9 @@ services:
     links:
       - db
       - redis
-#      - es
+      - es
     ports:
-      - "13000:3000"
+      - "3000:3000"
     networks:
       - internal_network
       - external_network
@@ -37,20 +37,20 @@ services:
     ports:
       - "15432:5432"
 
-#  es:
-#    restart: always
-#    image: docker.elastic.co/elasticsearch/elasticsearch:7.14.1
-#    environment:
-#      - "cluster.name=misskey_cluster"
-#      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
-#      - "discovery.type=single-node"
-#      - "ingest.geoip.downloader.enabled=false"
-#    networks:
-#      - internal_network
-#    volumes:
-#      - ./elasticsearch:/usr/share/elasticsearch/data
-#    ports:
-#      - "9200:9200"
+  es:
+    restart: always
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.14.1
+    environment:
+      - "cluster.name=misskey_cluster"
+      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+      - "discovery.type=single-node"
+      - "ingest.geoip.downloader.enabled=false"
+    networks:
+      - internal_network
+    volumes:
+      - ./elasticsearch:/usr/share/elasticsearch/data
+    ports:
+      - "19200:9200"
 
 networks:
   internal_network:

@@ -1,5 +1,6 @@
 ---
 _lang_: "Italiano"
+adminPage: "Come usare"
 headlineMisskey: "Rete collegata tramite note"
 introMisskey: "Benvenut@! Misskey è un servizio di microblogging decentralizzato, libero e aperto. \nScrivi \"note\" per condividere ciò che sta succedendo adesso o per dire a tutti qualcosa di te. 📡\nGrazie alla funzione \"reazioni\" puoi anche mandare reazioni rapide alle note delle altre persone del Fediverso. 👍\nEsplora un nuovo mondo! 🚀"
 monthAndDay: "{day}/{month}"

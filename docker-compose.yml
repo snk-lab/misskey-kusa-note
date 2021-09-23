@@ -30,6 +30,7 @@ services:
     image: postgres:12.2-alpine
     networks:
       - internal_network
+      - external_network
     env_file:
       - .config/docker.env
     volumes:

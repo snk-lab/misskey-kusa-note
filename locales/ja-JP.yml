@@ -1,5 +1,6 @@
 _lang_: "日本語"
 
+adminPage: "使い方"
 headlineMisskey: "ノートでつながるネットワーク"
 introMisskey: "ようこそ！Misskeyは、オープンソースの分散型マイクロブログサービスです。\n「ノート」を作成して、いま起こっていることを共有したり、あなたについて皆に発信しよう📡\n「リアクション」機能で、皆のノートに素早く反応を追加することもできます👍\n新しい世界を探検しよう🚀"
 monthAndDay: "{month}月 {day}日"
@@ -796,7 +797,7 @@ _accountDelete:
   started: "削除処理が開始されました。"
   inProgress: "削除が進行中"
 
-_docs: 
+_docs:
   continueReading: "続きを読む"
   features: "機能"
   generalTopics: "一般的なトピック"

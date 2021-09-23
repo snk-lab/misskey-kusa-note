@@ -9,7 +9,10 @@
 		</MkButton>
 	</div>
 	<div class="divider"></div>
-	<MkA class="item index" active-class="active" to="/" exact v-click-anime>
+	<MkA class="item index" :to="maintainerPage" v-click-anime>
+		<i class="fas fa-info fa-fw"></i><span class="text">{{ $ts.adminPage }}</span>
+	</MkA>
+	<MkA class="item" active-class="active" to="/" exact v-click-anime>
 		<i class="fas fa-home fa-fw"></i><span class="text">{{ $ts.timeline }}</span>
 	</MkA>
 	<template v-for="item in menu">
@@ -80,6 +83,13 @@ export default defineComponent({
 			}
 			return false;
 		},
+
+		maintainerPage(): string {
+			if(this.$instance.maintainerName){
+				return '/@' + this.$instance.maintainerName + '/pages';
+			}
+			return '/';
+		}
 	},
 
 	watch: {

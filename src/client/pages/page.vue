@@ -47,7 +47,8 @@
 			</div>
 			<MkAd :prefer="['horizontal', 'horizontal-big']"/>
 			<MkContainer :max-height="300" :foldable="true" class="other">
-				<template #header><i class="fas fa-clock"></i> {{ $ts.recentPosts }}</template>
+				<template #header v-if="page.user.isAdmin"><i class="fas fa-info"></i> {{ $ts.adminPage }}</template>
+				<template #header v-else><i class="fas fa-clock"></i> {{ $ts.recentPosts }}</template>
 				<MkPagination :pagination="otherPostsPagination" #default="{items}">
 					<MkPagePreview v-for="page in items" :page="page" :key="page.id" class="_gap"/>
 				</MkPagination>
@@ -109,7 +110,8 @@ export default defineComponent({
 				endpoint: 'users/pages',
 				limit: 6,
 				params: () => ({
-					userId: this.page.user.id
+					userId: this.page.user.id,
+					reverse: this.page.user.isAdmin
 				})
 			},
 		};

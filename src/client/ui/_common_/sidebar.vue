@@ -88,7 +88,6 @@ export default defineComponent({
 			}
 			return false;
 		},
-
 		maintainerPage(): string {
 			if(this.$instance.maintainerName){
 				return '/@' + this.$instance.maintainerName + '/pages';
@@ -448,7 +447,6 @@ export default defineComponent({
 						border-radius: 999px;
 						background: var(--accent);
 					}
-
 					&:hover, &.active {
 						&:before {
 							background: var(--accentLighten);

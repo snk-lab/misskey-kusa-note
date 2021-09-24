@@ -32,6 +32,7 @@ export default defineComponent({
 				limit: 20,
 				params: {
 					userId: this.user.id,
+					reverse: this.user.isAdmin
 				}
 			},
 		};
@@ -45,7 +46,7 @@ export default defineComponent({
 
 	methods: {
 		userPage,
-		
+
 		acct
 	}
 });

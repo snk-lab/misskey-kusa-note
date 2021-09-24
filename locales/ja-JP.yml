@@ -1,5 +1,6 @@
 _lang_: "日本語"
 
+adminPage: "使い方"
 headlineMisskey: "ノートでつながるネットワーク"
 introMisskey: "ようこそ！Misskeyは、オープンソースの分散型マイクロブログサービスです。\n「ノート」を作成して、いま起こっていることを共有したり、あなたについて皆に発信しよう📡\n「リアクション」機能で、皆のノートに素早く反応を追加することもできます👍\n新しい世界を探検しよう🚀"
 monthAndDay: "{month}月 {day}日"
@@ -529,6 +530,8 @@ removeAllFollowing: "フォローを全解除"
 removeAllFollowingDescription: "{host}からのフォローをすべて解除します。そのインスタンスがもう存在しなくなった場合などに実行してください。"
 userSuspended: "このユーザーは凍結されています。"
 userSilenced: "このユーザーはサイレンスされています。"
+yourAccountSuspendedTitle: "アカウントが凍結されています"
+yourAccountSuspendedDescription: "このアカウントは、サーバーの利用規約に違反したなどの理由により、凍結されています。詳細については管理者までお問い合わせください。新しいアカウントを作らないでください。"
 menu: "メニュー"
 divider: "分割線"
 addItem: "項目を追加"
@@ -794,7 +797,7 @@ _accountDelete:
   started: "削除処理が開始されました。"
   inProgress: "削除が進行中"
 
-_docs: 
+_docs:
   continueReading: "続きを読む"
   features: "機能"
   generalTopics: "一般的なトピック"
@@ -910,6 +913,8 @@ _mfm:
   fontDescription: "内容のフォントを指定することができます。"
   rainbow: "レインボー"
   rainbowDescription: "内容をレインボーにします。"
+  sparkle: "キラキラ"
+  sparkleDescription: "キラキラしたパーティクルのエフェクトを追加します。"
 
 _reversi:
   reversi: "リバーシ"

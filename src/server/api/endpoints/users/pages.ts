@@ -24,6 +24,11 @@ export const meta = {
 		untilId: {
 			validator: $.optional.type(ID),
 		},
+
+		reverse: {
+			validator: $.optional.bool,
+			default: false,
+		},
 	}
 };
 
@@ -32,6 +37,9 @@ export default define(meta, async (ps, user) => {
 		.andWhere(`page.userId = :userId`, { userId: ps.userId })
 		.andWhere('page.visibility = \'public\'');
 
+	if (ps.reverse) {
+		query.orderBy('page.createdAt', 'ASC');
+	}
 	const pages = await query
 		.take(ps.limit!)
 		.getMany();

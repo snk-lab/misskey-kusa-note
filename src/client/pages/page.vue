@@ -33,8 +33,8 @@
 					<MkFollowButton v-if="!$i || $i.id != page.user.id" :user="page.user" :inline="true" :transparent="false" :full="true" large class="koudoku"/>
 				</div>
 				<div class="links">
-					<MkA :to="`/@${username}/pages/${pageName}/view-source`" class="link">{{ $ts._pages.viewSource }}</MkA>
 					<template v-if="$i && $i.id === page.userId">
+						<MkA :to="`/@${username}/pages/${pageName}/view-source`" class="link">{{ $ts._pages.viewSource }}</MkA>
 						<MkA :to="`/pages/edit/${page.id}`" class="link">{{ $ts._pages.editThisPage }}</MkA>
 						<button v-if="$i.pinnedPageId === page.id" @click="pin(false)" class="link _textButton">{{ $ts.unpin }}</button>
 						<button v-else @click="pin(true)" class="link _textButton">{{ $ts.pin }}</button>
@@ -47,7 +47,8 @@
 			</div>
 			<MkAd :prefer="['horizontal', 'horizontal-big']"/>
 			<MkContainer :max-height="300" :foldable="true" class="other">
-				<template #header><i class="fas fa-clock"></i> {{ $ts.recentPosts }}</template>
+				<template #header v-if="page.user.isAdmin"><i class="fas fa-info"></i> {{ $ts.adminPage }}</template>
+				<template #header v-else><i class="fas fa-clock"></i> {{ $ts.recentPosts }}</template>
 				<MkPagination :pagination="otherPostsPagination" #default="{items}">
 					<MkPagePreview v-for="page in items" :page="page" :key="page.id" class="_gap"/>
 				</MkPagination>
@@ -109,7 +110,8 @@ export default defineComponent({
 				endpoint: 'users/pages',
 				limit: 6,
 				params: () => ({
-					userId: this.page.user.id
+					userId: this.page.user.id,
+					reverse: this.page.user.isAdmin
 				})
 			},
 		};

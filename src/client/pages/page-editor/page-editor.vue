@@ -200,6 +200,11 @@ export default defineComponent({
 			this.readonly = true;
 		}
 
+		if (this.author.id !== this.page.userId){
+			// 他の人のページ複製機能不要 url直打ち対応
+			await this.$router.push(`/@${this.page.user.username}/pages/${this.page.name}`);
+		}
+
 		if (this.page) {
 			this.author = this.page.user;
 			this.pageId = this.page.id;
